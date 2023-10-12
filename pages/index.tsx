@@ -2,11 +2,19 @@ import Box from '@mui/material/Box';
 import {Stack} from "@mui/system";
 import Head from 'next/head';
 
-import {ProductCard} from "@components/product-card/product-card";
+import {ArticleCard} from "@components/article-card/article-card";
 import {style} from '@styles/root.style';
 import {container, containerPosition} from "@styles/utility.styles";
+import type {InferGetStaticPropsType, GetStaticProps} from 'next'
+import {I_Article} from "src/types/content.types";
 
-export default function Home() {
+export default function Home({
+                                 articles,
+                             }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+    const renderArticles = () => {
+        return articles.map(item => <ArticleCard {...item} key={item.id}/>)
+    }
 
     return (
         <>
@@ -17,9 +25,18 @@ export default function Home() {
 
             <Box component='main' sx={style.main}>
                 <Stack gap={10} my={10} sx={[container, containerPosition]}>
-                    <ProductCard/>
+                    {renderArticles()}
                 </Stack>
             </Box>
         </>
     )
 }
+
+
+export const getStaticProps = (async (context) => {
+    const rs = await fetch('http://localhost:3001/articles')
+    const articles: I_Article[] = await rs.json()
+    return {props: {articles}}
+}) satisfies GetStaticProps<{
+    articles: I_Article[],
+}>
