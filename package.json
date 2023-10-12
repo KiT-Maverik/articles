@@ -6,6 +6,7 @@
     "app:build": "next build",
     "app:start": "next start",
     "app:start:dev": "next dev",
+    "start:mock:server": "json-server --watch mocks/db.json",
     "lint:fix": "next lint"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-inline-react-svg": "^2.0.2",
     "babel-plugin-module-resolver": "^5.0.0",
-    "eslint-plugin-import-order-autofix": "^0.8.3"
+    "eslint-plugin-import-order-autofix": "^0.8.3",
+    "json-server": "^0.17.4"
   }
 }
