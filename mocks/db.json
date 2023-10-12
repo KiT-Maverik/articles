@@ -4,63 +4,84 @@
       "id": 1,
       "title": "The Art of Cooking",
       "description": "Learn the basics of cooking and create delicious meals at home.",
-      "tags": ["cooking", "food", "recipes"],
+      "tags": ["cooking", "food"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 2,
       "title": "Exploring National Parks",
       "description": "Embark on a journey to discover the natural beauty of our national parks.",
-      "tags": ["travel", "nature", "adventure"],
+      "tags": ["travel", "nature"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 3,
       "title": "The Future of Artificial Intelligence",
       "description": "Delve into the cutting-edge developments and applications of AI technology.",
-      "tags": ["AI", "technology", "innovation"],
+      "tags": ["AI", "technology"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 4,
       "title": "Fitness and Wellness Guide",
       "description": "Achieve your fitness goals and maintain a healthy lifestyle with expert advice.",
-      "tags": ["fitness", "health", "wellness"],
+      "tags": ["fitness", "health"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 5,
       "title": "Mastering Photography",
       "description": "Capture stunning moments with tips and techniques from professional photographers.",
-      "tags": ["photography", "art", "creativity"],
+      "tags": ["photography", "art"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 6,
       "title": "Financial Planning for Millennials",
       "description": "Build a secure financial future with practical strategies tailored for millennials.",
-      "tags": ["finance", "money", "investing"],
+      "tags": ["finance", "money"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 7,
       "title": "Exploring World Cuisines",
       "description": "Dive into the rich and diverse world of global cuisines and culinary traditions.",
-      "tags": ["food", "culture", "cuisine"],
+      "tags": ["food", "culture"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 8,
       "title": "Innovations in Green Energy",
       "description": "Discover the latest breakthroughs in renewable energy sources and sustainable practices.",
-      "tags": ["energy", "sustainability", "environment"],
+      "tags": ["energy", "sustainability"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     },
     {
       "id": 9,
       "title": "Mindfulness and Mental Health",
       "description": "Learn techniques to promote mental well-being and cultivate mindfulness in daily life.",
-      "tags": ["mindfulness", "mental health", "well-being"],
+      "tags": ["mindfulness", "well-being"],
+      "cover": "https://fakeimg.pl/600x400?text=Cover"
+    },
+    {
+      "id": 10,
+      "title": "The Science of Sleep",
+      "description": "Explore the importance of quality sleep and how it impacts your overall health.",
+      "tags": ["sleep", "health"],
+      "cover": "https://fakeimg.pl/600x400?text=Cover"
+    },
+    {
+      "id": 11,
+      "title": "Adventure Sports and Thrills",
+      "description": "Get your adrenaline pumping with thrilling adventure sports from around the world.",
+      "tags": ["adventure", "sports"],
+      "cover": "https://fakeimg.pl/600x400?text=Cover"
+    },
+    {
+      "id": 12,
+      "title": "Mastering Watercolor Painting",
+      "description": "Unlock the secrets of watercolor painting and create beautiful works of art.",
+      "tags": ["art", "painting"],
       "cover": "https://fakeimg.pl/600x400?text=Cover"
     }
   ],
