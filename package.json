@@ -6,7 +6,7 @@
     "app:build": "next build",
     "app:start": "next start",
     "app:start:dev": "next dev",
-    "start:mock:server": "json-server --watch mocks/db.json",
+    "start:mock:server": "json-server --watch -p 3001 mocks/db.json",
     "lint:fix": "next lint"
   },
   "dependencies": {
