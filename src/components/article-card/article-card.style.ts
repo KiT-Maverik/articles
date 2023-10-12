@@ -5,6 +5,15 @@ const container: SxProps = {
     maxWidth: 400,
     display: "flex",
     flexDirection: "column",
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    transition: '0.5s',
+
+    '&:hover' : {
+        backgroundColor: 'white',
+        boxShadow: 2,
+        transition: '0.5s',
+    }
 } as const;
 
 const media: SxProps = {
