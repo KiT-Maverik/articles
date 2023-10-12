@@ -20,6 +20,22 @@ const articles: SxProps = {
     },
 } as const;
 
+const findMoreContainer = {
+    backgroundColor: 'white',
+    py: 10,
+    alignSelf: 'stretch'
+}
+
+const link = {
+    'a': {
+        textDecoration: 'none'
+    }
+}
+
 export const style = {
     articles,
+    findOutMore: {
+        container: findMoreContainer,
+        link,
+    }
 }

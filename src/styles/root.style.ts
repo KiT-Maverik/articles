@@ -16,6 +16,7 @@ const main: SxProps = {
     display: "flex",
     justifyContent: "center",
     alignItems: "start",
+    flexDirection: 'column',
 } as const;
 
 export const style = {

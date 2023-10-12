@@ -9,6 +9,7 @@ import {container, containerPosition} from "@styles/utility.styles";
 import type {InferGetStaticPropsType, GetStaticProps} from 'next'
 import {I_Article} from "src/types/content.types";
 import Typography from "@mui/material/Typography";
+import Link from 'next/link';
 
 export default function Home({
                                  articles,
@@ -25,12 +26,21 @@ export default function Home({
                 <meta name="description" content="Articles fancy page"/>
             </Head>
 
-            <Box component='main' sx={rootStyle.main}>
-                <Stack gap={10} my={10} sx={[container, containerPosition]}>
-                    <Typography variant="h5" align='center' color="text.disabled">News</Typography>
-                    <Box sx={pageStyle.articles}>
-                        {renderArticles()}
-                    </Box>
+
+            <Stack gap={10} my={10} sx={[container, containerPosition]}>
+                <Typography variant="h5" align='center' color="text.disabled">News</Typography>
+                <Box sx={pageStyle.articles}>
+                    {renderArticles()}
+                </Box>
+            </Stack>
+            <Box sx={pageStyle.findOutMore.container}>
+                <Stack justifyContent="center" direction="row" gap={2}>
+                    <Typography variant="h6" fontWeight='lighter'>Find out more at</Typography>
+                    <Typography variant="h6" color='primary' fontWeight='lighter' sx={pageStyle.findOutMore.link}>
+                        <Link href="https://people.com/">
+                            www.people.com
+                        </Link>
+                    </Typography>
                 </Stack>
             </Box>
         </>
