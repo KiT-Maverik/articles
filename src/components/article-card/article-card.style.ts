@@ -24,7 +24,7 @@ const media: SxProps = {
 const contentContainer: SxProps = {
     display: "flex",
     flexDirection: 'column',
-    gap: 3,
+    gap: 2,
     flexGrow: 1,
 } as const;
 

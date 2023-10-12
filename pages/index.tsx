@@ -8,6 +8,7 @@ import {style as pageStyle} from '@styles/pages/home.style';
 import {container, containerPosition} from "@styles/utility.styles";
 import type {InferGetStaticPropsType, GetStaticProps} from 'next'
 import {I_Article} from "src/types/content.types";
+import Typography from "@mui/material/Typography";
 
 export default function Home({
                                  articles,
@@ -26,6 +27,7 @@ export default function Home({
 
             <Box component='main' sx={rootStyle.main}>
                 <Stack gap={10} my={10} sx={[container, containerPosition]}>
+                    <Typography variant="h5" align='center' color="text.disabled">News</Typography>
                     <Box sx={pageStyle.articles}>
                         {renderArticles()}
                     </Box>

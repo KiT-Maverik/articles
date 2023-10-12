@@ -17,10 +17,10 @@ export const ArticleCard = ({id, title, description, cover, tags}: I_Article) =>
         <Card sx={style.container}>
             <CardMedia image={cover} sx={style.media}/>
             <CardContent sx={style.content.container}>
-                <Typography variant="h5" color="primary">
+                <Typography variant="subtitle1" color="primary">
                     {title}
                 </Typography>
-                <Typography variant="body2" sx={style.content.description}>
+                <Typography variant="body2" sx={style.content.description} color="text.secondary">
                     {description}
                 </Typography>
                 <Stack direction="row" gap={2}>
