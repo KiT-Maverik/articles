@@ -3,7 +3,8 @@ import {Stack} from "@mui/system";
 import Head from 'next/head';
 
 import {ArticleCard} from "@components/article-card/article-card";
-import {style} from '@styles/root.style';
+import {style as rootStyle} from '@styles/root.style';
+import {style as pageStyle} from '@styles/pages/home.style';
 import {container, containerPosition} from "@styles/utility.styles";
 import type {InferGetStaticPropsType, GetStaticProps} from 'next'
 import {I_Article} from "src/types/content.types";
@@ -23,9 +24,11 @@ export default function Home({
                 <meta name="description" content="Articles fancy page"/>
             </Head>
 
-            <Box component='main' sx={style.main}>
+            <Box component='main' sx={rootStyle.main}>
                 <Stack gap={10} my={10} sx={[container, containerPosition]}>
-                    {renderArticles()}
+                    <Box sx={pageStyle.articles}>
+                        {renderArticles()}
+                    </Box>
                 </Stack>
             </Box>
         </>

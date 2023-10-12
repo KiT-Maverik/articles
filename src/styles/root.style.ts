@@ -1,5 +1,6 @@
 import {blueGrey} from "@mui/material/colors";
 import {type SxProps} from "@mui/system";
+import {theme} from "@styles/theme.styles";
 
 const app: SxProps = {
     display: 'flex',
