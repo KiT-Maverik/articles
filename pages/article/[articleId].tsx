@@ -8,12 +8,14 @@ import {T_CommentFormData, schema} from "@utils/forms/comment.form";
 import {zodResolver} from '@hookform/resolvers/zod';
 import {Button, TextField} from '@mui/material';
 import {postData} from "@utils/fetch.utils";
-import {MockArticle} from "@components/mock-article/mock-article";
 import {api} from "@constants/api.constants";
 import {Divider} from "@mui/material";
 import {style} from "@styles/pages/article.style";
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import {useToast} from "@components/toast-provider/toast-provider";
+import {useMemo} from "react";
+import {lorem} from "@utils/lorem.utils";
+import {NoSsr} from "@mui/base";
 
 export default function ArticlePage({
                                         article,
@@ -46,13 +48,22 @@ export default function ArticlePage({
             reset();
             showToast('Comment posted', 'success')
         });
-    }
+    };
+
+    const renderMockArticle = useMemo(() => (
+        <NoSsr>
+            <Typography gutterBottom variant='body1'>{lorem.generateSentences(10)}</Typography>
+            <Typography gutterBottom variant='h6'>{lorem.generateSentences(1)}</Typography>
+            <Typography gutterBottom variant='body1'>{lorem.generateSentences(15)}</Typography>
+            <Typography gutterBottom variant='body1'>{lorem.generateSentences(10)}</Typography>
+        </NoSsr>
+    ),[])
 
     return (
         <>
             <Stack gap={5} my={10} sx={[container, containerPosition]}>
                 <Typography gutterBottom variant='h4'>{article.title}</Typography>
-                <MockArticle/>
+                {renderMockArticle}
                 <Divider/>
                 <Stack sx={style.commentForm} gap={3} component="form" onSubmit={handleSubmit(onSubmit)}>
                     <TextField
