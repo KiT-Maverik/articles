@@ -10,14 +10,19 @@ import type {InferGetStaticPropsType, GetStaticProps} from 'next'
 import {I_Article} from "src/types/content.types";
 import Typography from "@mui/material/Typography";
 import Link from 'next/link';
+import {useMemo} from "react";
+import {api} from "@constants/api.constants";
 
 export default function Home({
                                  articles,
                              }: InferGetStaticPropsType<typeof getStaticProps>) {
 
-    const renderArticles = () => {
-        return articles.map(item => <ArticleCard {...item} key={item.id}/>)
-    }
+    const renderArticles = useMemo(() => {
+        return articles.map(item => <ArticleCard
+            {...item}
+            key={item.id}
+        />)
+    }, [articles])
 
     return (
         <>
@@ -30,7 +35,7 @@ export default function Home({
             <Stack gap={10} my={10} sx={[container, containerPosition]}>
                 <Typography variant="h5" align='center' color="text.disabled">News</Typography>
                 <Box sx={pageStyle.articles}>
-                    {renderArticles()}
+                    {renderArticles}
                 </Box>
             </Stack>
             <Box sx={pageStyle.findOutMore.container}>
@@ -49,7 +54,7 @@ export default function Home({
 
 
 export const getStaticProps = (async (context) => {
-    const rs = await fetch('http://localhost:3001/articles')
+    const rs = await fetch(api.article.list)
     const articles: I_Article[] = await rs.json()
     return {props: {articles}}
 }) satisfies GetStaticProps<{
