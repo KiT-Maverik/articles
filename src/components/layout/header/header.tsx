@@ -4,7 +4,6 @@ import {style} from "./header.style";
 import {route} from "@constants/page-routes.constants";
 import {Button} from "@mui/material";
 import {useRouter} from "next/router";
-import Box from "@mui/material/Box";
 import Image from "next/image";
 
 export const Header = () => {
@@ -16,8 +15,8 @@ export const Header = () => {
                direction='row'
                justifyContent='space-between'
                alignItems='center'>
-            <Stack sx={{flexGrow: 1}} direction='row' alignItems='center'>
-                <Image src='/img/logo.png' alt="logo" width={75} height={42}/>
+            <Stack sx={{flexGrow: 1, cursor: 'pointer'}} direction='row' alignItems='center'>
+                <Image src='/img/logo.png' alt="logo" width={75} height={42} onClick={() => push(route.home)}/>
             </Stack>
             <Button onClick={() => push(route.placeholder)}>About us</Button>
             <Button onClick={() => push(route.placeholder)}>What we do</Button>
