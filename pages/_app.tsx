@@ -8,6 +8,7 @@ import {Header} from "@components/layout/header/header";
 
 import {style} from "@styles/root.style";
 import {theme} from "@styles/theme.styles";
+import {ToastProvider} from "@components/toast-provider/toast-provider";
 
 export default function App({Component, pageProps}: AppProps) {
 
@@ -15,13 +16,15 @@ export default function App({Component, pageProps}: AppProps) {
         <>
             <CssBaseline/>
             <ThemeProvider theme={theme}>
-                <Box sx={style.app}>
-                    <Header/>
-                    <Box component='main' sx={style.main}>
-                        <Component {...pageProps} />
+                <ToastProvider>
+                    <Box sx={style.app}>
+                        <Header/>
+                        <Box component='main' sx={style.main}>
+                            <Component {...pageProps} />
+                        </Box>
+                        <Footer/>
                     </Box>
-                    <Footer/>
-                </Box>
+                </ToastProvider>
             </ThemeProvider>
         </>
     )

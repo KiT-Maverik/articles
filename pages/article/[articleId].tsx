@@ -12,6 +12,8 @@ import {MockArticle} from "@components/mock-article/mock-article";
 import {api} from "@constants/api.constants";
 import {Divider} from "@mui/material";
 import {style} from "@styles/pages/article.style";
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import {useToast} from "@components/toast-provider/toast-provider";
 
 export default function ArticlePage({
                                         article,
@@ -25,6 +27,8 @@ export default function ArticlePage({
     } = useForm<T_CommentFormData>({
         resolver: zodResolver(schema)
     });
+
+    const {showToast} = useToast();
 
     const onSubmit = () => {
 
@@ -40,6 +44,7 @@ export default function ArticlePage({
             console.log('It works!');
             console.log(data);
             reset();
+            showToast('Comment posted', 'success')
         });
     }
 
